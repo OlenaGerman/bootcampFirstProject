@@ -29,6 +29,10 @@ public class SecondTest extends BaseTest  {
         inputFields.get(2).sendKeys("firstName");
         inputFields.get(3).sendKeys("lastName");
         inputFields.get(4).sendKeys("123456778Y");
+//
+//        new test
+//        new test1
+
 
 
 
