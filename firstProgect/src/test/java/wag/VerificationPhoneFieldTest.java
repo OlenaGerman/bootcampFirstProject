@@ -1,14 +1,16 @@
 package wag;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-public class PromotionWalkFreeTest extends BaseTest {
+public class VerificationPhoneFieldTest extends BaseTest{
     private HomePage homePage;
     private PromotionWalkFreePage promotionWalkFreePage;
 
 
+
     @Test
-    public void testPromotionWalkFreeTest(){
+    public void testVerificationPhoneField(){
 
         homePage = new HomePage(driver);
         promotionWalkFreePage = homePage.clickWalkFreeButton();
@@ -16,11 +18,21 @@ public class PromotionWalkFreeTest extends BaseTest {
         promotionWalkFreePage.inputPassword(user.getPassword());
         promotionWalkFreePage.inputFirstName(user.getFirstName());
         promotionWalkFreePage.inputLastName(user.getLastName());
-        promotionWalkFreePage.inputCellPhone(user.getPhone());
+        promotionWalkFreePage.inputCellPhone("92927692");
+        promotionWalkFreePage.clickNextButton();
+
+        String errorPhoneMassage = promotionWalkFreePage.getPhoneErrorMassage();
+        Assert.assertEquals("please enter a valid phone number", errorPhoneMassage);
+        System.out.println(errorPhoneMassage);
+
+
+
+
 
 
 
 
     }
+
 
 }
